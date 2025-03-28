@@ -10,7 +10,7 @@
 
 # Demo :movie_camera:
 
-![](./public/image/screen.png)
+![](./public/cap/png)
 
 ## View live preview [here](https://abusaid.netlify.app/).
 
