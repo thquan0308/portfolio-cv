@@ -22,20 +22,20 @@ export default function Home() {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    console.log("Running on client-side"); // Kiểm tra
-    getData().then((data) => setBlogs(data)).catch((err) => console.error(err));
+    if (typeof window === "undefined") return; // Fix lỗi SSR
+    getData().then((data) => setBlogs(data));
   }, []);
+
 
   return (
     <div suppressHydrationWarning>
-      <p>Test Page</p>
-      {/* <HeroSection />
+      <HeroSection />
       <AboutSection />
       <Experience />
       <Skills />
       <Projects />
       <Education />
-      <ContactSection /> */}
+      <ContactSection />
     </div>
   );
 }
