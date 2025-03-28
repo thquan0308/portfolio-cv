@@ -23,8 +23,7 @@
         "react-icons": "^4.11.0",
         "react-toastify": "^10.0.4",
         "react-type-animation": "^3.2.0",
-        "sharp": "^0.33.5",
-        "typewriter-effect": "^2.17.0"
+        "sharp": "^0.33.5"
     },
     "devDependencies": {
         "autoprefixer": "latest",
