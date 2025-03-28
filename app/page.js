@@ -22,11 +22,13 @@ export default function Home() {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    getData().then((data) => setBlogs(data));
+    console.log("Running on client-side"); // Kiểm tra
+    getData().then((data) => setBlogs(data)).catch((err) => console.error(err));
   }, []);
 
   return (
     <div suppressHydrationWarning>
+      <p>Test Page</p>
       {/* <HeroSection />
       <AboutSection />
       <Experience />
