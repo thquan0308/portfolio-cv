@@ -51,19 +51,6 @@ function HeroSection() {
                         }}
                         className="my-3"
                     >
-                        {/* <Typewriter
-                            options={{
-                                strings: [
-                                    "Frontend Developer",
-                                    "Graduated from HCMUTE",
-                                    "MERN Stack Developer",
-                                ],
-                                autoStart: true,
-                                loop: true,
-                                delay: 70,
-                                deleteSpeed: 30,
-                            }}
-                        /> */}
                         <TypeAnimation
                             sequence={[
                                 "Frontend Developer",
