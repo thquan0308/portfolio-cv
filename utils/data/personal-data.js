@@ -1,0 +1,20 @@
+export const personalData = {
+  name: "Trần Hoàng Quân",
+  profile: '/me.png',
+  designation: "Frontend Developer",
+  description1: "I fell in love with programming and I have at least learnt something, I think…",
+  description2: "I am fluent in classics like ",
+  description3: "My field of Interest's are building new ",
+  description4: "Whenever possible, I also apply my passion for developing products with ",
+  email: 'thquan.0308@gmail.com',
+  phone: '+84949123644',
+  address: 'Thu Duc District, HCM City ',
+  github: 'https://github.com/thquan0308',
+  facebook: 'https://www.facebook.com/tranhoangquan.thq',
+  linkedIn: 'https://www.linkedin.com/in/tr%E1%BA%A7n-ho%C3%A0ng-qu%C3%A2n-277007359/',
+  twitter: 'https://x.com/QuanThq0308',
+  stackOverflow: 'https://stackoverflow.com/users/30089812/quan-thq',
+  instagram: "https://www.instagram.com/tranhoangquan.thq/",
+  devUsername: "Trần Hoàng Quân",
+  resume: "https://drive.google.com/file/d/1lpm-n6aHXJfj4lBjst_6Bw_zOJ5_xS3b/view?usp=drive_link"
+}
