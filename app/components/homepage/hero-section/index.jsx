@@ -52,7 +52,7 @@ function HeroSection() {
                         }}
                         className="my-3"
                     >
-                        <Typewriter
+                        {/* <Typewriter
                             options={{
                                 strings: [
                                     "Frontend Developer",
@@ -64,6 +64,19 @@ function HeroSection() {
                                 delay: 70,
                                 deleteSpeed: 30,
                             }}
+                        /> */}
+                        <TypeAnimation
+                            sequence={[
+                                "Frontend Developer",
+                                1000, // Hiển thị 1 giây
+                                "Graduated from HCMUTE",
+                                1000,
+                                "MERN Stack Developer",
+                                1000,
+                            ]}
+                            speed={70} // Tốc độ gõ chữ
+                            deletionSpeed={30} // Tốc độ xóa chữ
+                            repeat={Infinity} // Lặp vô hạn
                         />
                     </div>
 
