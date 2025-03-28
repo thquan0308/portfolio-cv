@@ -11,14 +11,14 @@ const ScrollToTop = () => {
     const [btnCls, setBtnCls] = useState(DEFAULT_BTN_CLS);
 
     useEffect(() => {
-        if (typeof window === "undefined") return; // Chặn lỗi khi SSR
+        if (typeof window === "undefined") return; // Chặn lỗi SSR
 
         const handleScroll = () => {
-            if (window.scrollY > SCROLL_THRESHOLD) {
-                setBtnCls(DEFAULT_BTN_CLS.replace(" hidden", ""));
-            } else {
-                setBtnCls(DEFAULT_BTN_CLS + " hidden");
-            }
+            setBtnCls(
+                window.scrollY > SCROLL_THRESHOLD
+                    ? DEFAULT_BTN_CLS.replace(" hidden", "")
+                    : DEFAULT_BTN_CLS + " hidden"
+            );
         };
 
         window.addEventListener("scroll", handleScroll, { passive: true });

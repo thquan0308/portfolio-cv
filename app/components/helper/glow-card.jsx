@@ -1,17 +1,23 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const GlowCard = ({ children, identifier }) => {
+    const [container, setContainer] = useState(null);
+    const [cards, setCards] = useState([]);
+
     useEffect(() => {
-        if (typeof window === "undefined") return; // Chặn lỗi khi SSR
+        if (typeof window === "undefined") return; // Chặn lỗi SSR
 
         const CONTAINER = document.querySelector(
             `.glow-container-${identifier}`
         );
         const CARDS = document.querySelectorAll(`.glow-card-${identifier}`);
 
-        if (!CONTAINER || CARDS.length === 0) return; // Thoát nếu không tìm thấy phần tử
+        if (!CONTAINER || CARDS.length === 0) return;
+
+        setContainer(CONTAINER);
+        setCards(Array.from(CARDS));
 
         const CONFIG = {
             proximity: 40,
@@ -23,7 +29,7 @@ const GlowCard = ({ children, identifier }) => {
         };
 
         const UPDATE = (event) => {
-            if (!event) return; // Thoát nếu không có event
+            if (!event) return;
 
             for (const CARD of CARDS) {
                 const CARD_BOUNDS = CARD.getBoundingClientRect();
@@ -55,7 +61,6 @@ const GlowCard = ({ children, identifier }) => {
                     ) *
                         180) /
                     Math.PI;
-
                 ANGLE = ANGLE < 0 ? ANGLE + 360 : ANGLE;
 
                 CARD.style.setProperty("--start", ANGLE + 90);
@@ -63,6 +68,7 @@ const GlowCard = ({ children, identifier }) => {
         };
 
         const RESTYLE = () => {
+            if (!CONTAINER) return;
             CONTAINER.style.setProperty("--gap", CONFIG.gap);
             CONTAINER.style.setProperty("--blur", CONFIG.blur);
             CONTAINER.style.setProperty("--spread", CONFIG.spread);
@@ -75,7 +81,6 @@ const GlowCard = ({ children, identifier }) => {
         RESTYLE();
         document.body.addEventListener("pointermove", UPDATE);
 
-        // Cleanup
         return () => {
             document.body.removeEventListener("pointermove", UPDATE);
         };
