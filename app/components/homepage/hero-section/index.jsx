@@ -8,7 +8,6 @@ import { FaFacebook, FaTwitterSquare } from "react-icons/fa";
 import { MdDownload } from "react-icons/md";
 import { RiContactsFill } from "react-icons/ri";
 import { SiInstagram } from "react-icons/si";
-import Typewriter from "typewriter-effect";
 import { TypeAnimation } from "react-type-animation";
 import "./index.css";
 function HeroSection() {
